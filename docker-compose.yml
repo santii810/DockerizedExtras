@@ -1,0 +1,47 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+version: '3.7'
+
+# Define services
+services:
+  # Spring boot service
+#  app-server:
+#    build:
+#      context: . # Use an image built from the specified dockerfile in the `polling-app-server` directory.
+#      dockerfile: Dockerfile
+#    ports:
+##      - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+#      - target: 8080
+#        published: 9080
+#        protocol: tcp
+#        mode: host
+#    restart: always
+#    depends_on:
+#      - mysql # This service depends on mysql. Start that first.
+#    networks: # Networks to join (Services on the same network can communicate with each other using their name)
+#      - backend
+
+  # Database Service (Mysql)
+  mysql:
+    build:
+      context: src/main/resources/static/MySQLDock
+      dockerfile: Dockerfile
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: extras
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql-db:/var/lib/mysql
+
+# Volumes
+volumes:
+  mysql-db:
+
+# Networks to be created to facilitate communication between containers
+#networks:
+#  backend:

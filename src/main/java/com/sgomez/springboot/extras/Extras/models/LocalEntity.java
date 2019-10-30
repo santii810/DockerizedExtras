@@ -12,7 +12,7 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
-@Table(name = "Local")
+@Table(name = "\"local\"")
 public class LocalEntity {
     @Id
     @GeneratedValue
