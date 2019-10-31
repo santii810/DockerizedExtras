@@ -16,16 +16,11 @@ public class LocalController {
     private LocalService localService;
 
     @RequestMapping(
-            value = "locales",
+            value = "locals",
             method = RequestMethod.GET,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
     public List<LocalEntity> getAll() {
-//        List<Local> locales = new ArrayList<>();
-//        locales.add(new Local(1, "Encarna"));
-//        locales.add(new Local(1, "Vintage"));
-//        return locales;
-
         return localService.findAll();
     }
 
