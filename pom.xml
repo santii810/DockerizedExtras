@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.sgomez.springboot.extras</groupId>
 	<artifactId>Extras</artifactId>
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.5-SNAPSHOT</version>
 	<name>Extras</name>
 	<description>Extra management  app </description>
 
