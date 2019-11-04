@@ -8,10 +8,10 @@ VOLUME /tmp
 EXPOSE 8080
 
 # Define file path
-ARG JAR_FILE=target/Extras-0.0.3-SNAPSHOT.jar
+ARG JAR_FILE=target/Extras-0.0.4-SNAPSHOT.jar
 
 # Add the application's jar to the container
-ADD target/Extras-0.0.3-SNAPSHOT.jar Extras.jar
+ADD target/Extras-0.0.4-SNAPSHOT.jar Extras.jar
 
 # Run the jar file
 ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/Extras.jar"]
