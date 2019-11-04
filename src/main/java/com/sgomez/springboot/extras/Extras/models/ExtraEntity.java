@@ -16,7 +16,7 @@ import javax.persistence.*;
 @Table(name = "extra")
 public class ExtraEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
 
@@ -29,6 +29,5 @@ public class ExtraEntity {
     @JoinColumn(name = "user_id", nullable = false)
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "extras"})
     private UserEntity user;
-
 }
 

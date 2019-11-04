@@ -18,7 +18,7 @@ import java.util.List;
 @Table(name = "\"local\"")
 public class LocalEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column
